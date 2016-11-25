@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="skydrive" namespace="Microsoft.Policies.Skydrive" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="Skydrive" displayName="$(string.SkydriveSettingCategory)">
+      <parentCategory ref="windows:WindowsComponents" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="PreventSkydriveFileSync" class="Machine" displayName="$(string.PreventSkydriveFileSync)" explainText="$(string.PreventSkydriveFileSync_help)" key="Software\Policies\Microsoft\Windows\Skydrive" valueName="DisableFileSync">
+      <parentCategory ref="Skydrive" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3_NOSERVER" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="PreventSkydriveFileSyncOnMeteredNetwork" class="Machine" presentation="$(presentation.PreventSkydriveFileSyncOnMeteredNetwork)" displayName="$(string.PreventSkydriveFileSyncOnMeteredNetwork)" explainText="$(string.PreventSkydriveFileSyncOnMeteredNetwork_help)" key="Software\Policies\Microsoft\Windows\Skydrive">
+      <parentCategory ref="Skydrive" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3_NOSERVER" />
+      <elements>
+        <enum id="SkydriveMeteredNetwork_Dropdown" valueName="DisableMeteredNetworkFileSync">
+          <item displayName="$(string.SkydriveNeverSyncOnMeteredRoaming)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.SkydriveSyncOnMeteredNotRoaming)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="DisableLibrariesDefaultSaveToSkyDrive" class="Machine" displayName="$(string.DisableLibrariesDefaultSaveToSkyDrive_Title)" explainText="$(string.DisableLibrariesDefaultSaveToSkyDrive_Description)" key="Software\Policies\Microsoft\Windows\Skydrive" valueName="DisableLibrariesDefaultSaveToSkyDrive">
+      <parentCategory ref="Skydrive" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3_NOSERVER" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>
