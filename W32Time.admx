@@ -35,6 +35,7 @@
         <decimal id="W32TIME_MaxPollInterval" valueName="MaxPollInterval" />
         <decimal id="W32TIME_MinPollInterval" valueName="MinPollInterval" maxValue="15" />
         <decimal id="W32TIME_RequireSecureTimeSyncRequests" valueName="RequireSecureTimeSyncRequests" minValue="0" maxValue="1" />
+        <decimal id="W32TIME_UtilizeSslTimeData" valueName="UtilizeSslTimeData" minValue="0" maxValue="1" />
         <decimal id="W32TIME_ChainEntryTimeout" valueName="ChainEntryTimeout" minValue="2" maxValue="16" />
         <decimal id="W32TIME_ChainMaxEntries" valueName="ChainMaxEntries" minValue="128" maxValue="1024" />
         <decimal id="W32TIME_ChainMaxHostEntries" valueName="ChainMaxHostEntries" minValue="1" maxValue="4" />

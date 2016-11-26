@@ -399,16 +399,6 @@
            <multiText id="TS_ENABLE_IP_VIRTUALIZATION_EDIT" valueName="PerApp"/>
 		</elements>
     </policy>
-    <policy name="TS_DX_USE_FULL_HWGPU" class="Machine" displayName="$(string.TS_DX_USE_FULL_HWGPU)" explainText="$(string.TS_DX_USE_FULL_HWGPU_EXPLAIN)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="bEnumerateHWBeforeSW">
-        <parentCategory ref="terminalserver:TS_SESSIONS" />
-        <supportedOn ref="terminalserver:TS_SUPPORTED_Windows8_Server_With_RDSH" />
-        <enabledValue>
-            <decimal value="1" />
-        </enabledValue>
-        <disabledValue>
-            <decimal value="0" />
-        </disabledValue>
-    </policy>
 
   </policies>
 </policyDefinitions>

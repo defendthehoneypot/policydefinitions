@@ -137,6 +137,16 @@
                 <decimal value="0" />
             </disabledValue>
         </policy>
+        <policy name="EnableLegacyBalloonNotifications" class="User" displayName="$(string.EnableLegacyBalloonNotifications)" explainText="$(string.EnableLegacyBalloonNotifications_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="EnableLegacyBalloonNotifications">
+            <parentCategory ref="windows:StartMenu" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
+            </disabledValue>
+        </policy>
         <policy name="NoBalloonFeatureAdvertisements" class="User" displayName="$(string.NoBalloonFeatureAdvertisements)" explainText="$(string.NoBalloonFeatureAdvertisements_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="NoBalloonFeatureAdvertisements">
             <parentCategory ref="windows:StartMenu" />
             <supportedOn ref="windows:SUPPORTED_Windows7" />
@@ -189,13 +199,22 @@
         </policy>
         <policy name="ShowWindowsStoreAppsOnTaskbar" class="User" displayName="$(string.ShowWindowsStoreAppsOnTaskbar)" explainText="$(string.ShowWindowsStoreAppsOnTaskbar_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="ShowWindowsStoreAppsOnTaskbar">
             <parentCategory ref="windows:StartMenu" />
-            <!-- TODO: SUPPORTED_Windows_6_3 should be changed to the new version -->
             <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
             <enabledValue>
                 <decimal value="1" />
             </enabledValue>
             <disabledValue>
                 <decimal value="2" />
+            </disabledValue>
+        </policy>
+        <policy name="DisableNotificationCenter" class="User" displayName="$(string.DisableNotificationCenter)" explainText="$(string.DisableNotificationCenter_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="DisableNotificationCenter">
+            <parentCategory ref="windows:StartMenu" />
+            <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+            <enabledValue>
+                <decimal value="1" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0" />
             </disabledValue>
         </policy>
         <policy name="NoPinningStoreToTaskbar" class="User" displayName="$(string.NoPinningStoreToTaskbar)" explainText="$(string.NoPinningStoreToTaskbar_Help)" key="Software\Policies\Microsoft\Windows\Explorer" valueName="NoPinningStoreToTaskbar">

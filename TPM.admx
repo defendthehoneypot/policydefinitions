@@ -12,42 +12,6 @@
     </category>
   </categories>
   <policies>
-    <policy name="ActiveDirectoryBackup_Name" class="Machine" displayName="$(string.ActiveDirectoryBackup_Name)" explainText="$(string.ActiveDirectoryBackup_Help)" key="Software\Policies\Microsoft\TPM">
-      <parentCategory ref="TPMCategory" />
-      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
-      <enabledList defaultKey="Software\Policies\Microsoft\TPM">
-        <item valueName="ActiveDirectoryBackup">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-        <!-- 
-          Windows Vista and Windows 7 specified RequireActiveDirectoryBackup
-          as a separate setting for the ADBackup policy. To simplify TPM
-          policy, backup required is implied by enabling AD
-          Backup. By setting the RequireActiveDirectoryBackup value to 1 when
-          the AD backup policy is enabled, downlevel systems will see
-          consistent behavior.
-        -->
-        <item valueName="RequireActiveDirectoryBackup">
-          <value>
-            <decimal value="1" />
-          </value>
-        </item>
-      </enabledList>
-      <disabledList defaultKey="Software\Policies\Microsoft\TPM">
-        <item valueName="ActiveDirectoryBackup">
-          <value>
-            <decimal value="0" />
-          </value>
-        </item>
-        <item valueName="RequireActiveDirectoryBackup">
-          <value>
-            <decimal value="0" />
-          </value>
-        </item>
-      </disabledList>
-    </policy>
     <policy name="OSManagedAuth_Name" class="Machine" displayName="$(string.OSManagedAuth_Name)" explainText="$(string.OSManagedAuth_Help)" presentation="$(presentation.OSManagedAuth_Name)" key="Software\Policies\Microsoft\TPM">
       <parentCategory ref="TPMCategory" />
       <supportedOn ref="windows:SUPPORTED_Windows8" />

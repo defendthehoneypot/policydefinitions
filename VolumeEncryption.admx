@@ -11,6 +11,8 @@
     <definitions>
       <!-- We must make our own definition for Windows 8 without ARM -->  
       <definition name="SUPPORTED_Windows8NoARM" displayName="$(string.SUPPORTED_Windows8NoARM)" />  
+      <!-- Make our own definition for Windows Vista through Blue -->  
+      <definition name="SUPPORTED_Windows_6_3ToVista" displayName="$(string.SUPPORTED_Windows_6_3ToVista)" />  
     </definitions>
   </supportedOn>
   <categories>
@@ -150,9 +152,86 @@
           </elements>
     </policy>
 
+    <policy name="EncryptionMethodWithXts_Name" class="Machine" displayName="$(string.EncryptionMethodWithXts_Name)" explainText="$(string.EncryptionMethodWithXts_Help)" presentation="$(presentation.EncryptionMethodWithXts_Name)" key="SOFTWARE\Policies\Microsoft\FVE">
+        <parentCategory ref="FVECategory" />
+        <!--Bug OS:4242178 -->
+        <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+
+        <elements>
+            <enum id="EncryptionMethodWithXtsOsDropDown_Name" valueName="EncryptionMethodWithXtsOs" required="true">
+                <item displayName="$(string.EncryptionMethodDropDown_AES128_Name2)">
+                    <value>
+                        <decimal value="3" />
+                    </value>
+                </item>
+                <item displayName="$(string.EncryptionMethodDropDown_AES256_Name2)">
+                    <value>
+                        <decimal value="4" />
+                    </value>
+                </item>
+                <item displayName="$(string.EncryptionMethodDropDown_XTS_AES128_Name)">
+                    <value>
+                        <decimal value="6" />
+                    </value>
+                </item>
+                <item displayName="$(string.EncryptionMethodDropDown_XTS_AES256_Name)">
+                    <value>
+                        <decimal value="7" />
+                    </value>
+                </item>
+            </enum>
+
+            <enum id="EncryptionMethodWithXtsFdvDropDown_Name" valueName="EncryptionMethodWithXtsFdv" required="true">
+                <item displayName="$(string.EncryptionMethodDropDown_AES128_Name2)">
+                    <value>
+                        <decimal value="3" />
+                    </value>
+                </item>
+                <item displayName="$(string.EncryptionMethodDropDown_AES256_Name2)">
+                    <value>
+                        <decimal value="4" />
+                    </value>
+                </item>
+                <item displayName="$(string.EncryptionMethodDropDown_XTS_AES128_Name)">
+                    <value>
+                        <decimal value="6" />
+                    </value>
+                </item>
+                <item displayName="$(string.EncryptionMethodDropDown_XTS_AES256_Name)">
+                    <value>
+                        <decimal value="7" />
+                    </value>
+                </item>
+            </enum>
+
+            <enum id="EncryptionMethodWithXtsRdvDropDown_Name" valueName="EncryptionMethodWithXtsRdv" required="true">
+                <item displayName="$(string.EncryptionMethodDropDown_AES128_Name3)">
+                    <value>
+                        <decimal value="3" />
+                    </value>
+                </item>
+                <item displayName="$(string.EncryptionMethodDropDown_AES256_Name2)">
+                    <value>
+                        <decimal value="4" />
+                    </value>
+                </item>
+                <item displayName="$(string.EncryptionMethodDropDown_XTS_AES128_Name2)">
+                    <value>
+                        <decimal value="6" />
+                    </value>
+                </item>
+                <item displayName="$(string.EncryptionMethodDropDown_XTS_AES256_Name)">
+                    <value>
+                        <decimal value="7" />
+                    </value>
+                </item>
+            </enum>
+        </elements>
+    </policy>
+      
     <policy name="MorBehavior_Name" class="Machine" displayName="$(string.MorBehavior_Name)" explainText="$(string.MorBehavior_Help)" presentation="$(presentation.MorBehavior_Name)" key="Software\Policies\Microsoft\FVE" valueName="MorBehavior">
       <parentCategory ref="FVECategory" />
-       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+       <supportedOn ref="SUPPORTED_Windows_6_3ToVista" />
 
       <enabledValue>
         <decimal value="1" />
@@ -160,6 +239,37 @@
       <disabledValue>
         <decimal value="0" />
       </disabledValue>
+    </policy>
+
+    <policy name="PrebootRecoveryInfo_Name" class="Machine" displayName="$(string.PrebootRecoveryInfo_Name)" explainText="$(string.PrebootRecoveryInfo_Help)" presentation="$(presentation.PrebootRecoveryInfo)" key="Software\Policies\Microsoft\FVE">
+      <parentCategory ref="FVEOSCategory" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
+      <elements>
+        <enum id="PrebootRecoveryInfoDropDown_Name" valueName="RecoveryKeyMessageSource" required="true">
+          <item displayName="$(string.PrebootRecoveryInfoEmpty)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.PrebootRecoveryInfoUseDefault)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.PrebootRecoveryInfoUseMessage)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.PrebootRecoveryInfoUseUrl)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+        <text id="RecoveryMessage_Input" valueName="RecoveryKeyMessage" required="false" maxLength="900" />
+        <text id="RecoveryUrl_Input" valueName="RecoveryKeyUrl" required="false" maxLength="500" />
+      </elements>
     </policy>
 
     <policy name="EnhancedPIN_Name" class="Machine" displayName="$(string.EnhancedPIN_Name)" explainText="$(string.EnhancedPIN_Help)" presentation="$(presentation.EnhancedPIN)" key="Software\Policies\Microsoft\FVE" valueName="UseEnhancedPin">
