@@ -10,8 +10,64 @@
     <category name="PolicyPolicies" displayName="$(string.PolicyPolicies)">
       <parentCategory ref="windows:System" />
     </category>
+    <category name="MitOptions" displayName="$(string.MitigationOptions)">  
+      <parentCategory ref="windows:System" />  
+    </category>
+    <category name="NetworkFonts" displayName="$(string.Fonts)">
+      <parentCategory ref="windows:Network" />
+    </category>
   </categories>
   <policies>
+     <policy name="FontMitigation" clientExtension="{2A8FDC61-2347-4C87-92F6-B05EB91A201A}" class="Machine" displayName="$(string.Font_List)" explainText="$(string.Font_List_Help)" presentation="$(presentation.Font_List)" key="SOFTWARE\Policies\Microsoft\Windows NT\MitigationOptions">
+      <parentCategory ref="MitOptions" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <elements>
+        <enum id="FontMitigation_DL" valueName="MitigationOptions_FontBocking" required="true">
+          <item displayName="$(string.FontMitigation_On)">
+            <value>
+              <string>1000000000000</string>
+            </value>
+          </item>
+          <item displayName="$(string.FontMitigation_Off)">
+            <value>
+              <string>2000000000000</string>
+            </value>
+          </item>
+          <item displayName="$(string.FontMitigation_Audit)">
+            <value>
+              <string>3000000000000</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="ProcessMitigationOptions" clientExtension="{4B7C3B0F-E993-4E06-A241-3FBE06943684}" class="Both" displayName="$(string.ProcessMitigationOptions_List)" explainText="$(string.ProcessMitigationOptions_List_Help)" presentation="$(presentation.ProcessMitigationOptions_List)" key="SOFTWARE\Policies\Microsoft\Windows NT\MitigationOptions\ProcessMitigationOptions">
+      <parentCategory ref="MitOptions" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <elements>
+        <list id="ProcessMitigationOptionsList" key="SOFTWARE\Policies\Microsoft\Windows NT\MitigationOptions\ProcessMitigationOptions" additive="true" explicitValue="true"/>
+      </elements>
+    </policy>
+    <policy name="EnableFontProviders" class="Machine" displayName="$(string.EnableFontProviders)" explainText="$(string.EnableFontProviders_Help)" key="Software\Policies\Microsoft\Windows\System" valueName="EnableFontProviders">
+      <parentCategory ref="NetworkFonts" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="EnableCDP" class="Machine" displayName="$(string.EnableCDP)" explainText="$(string.EnableCDP_Help)" key="Software\Policies\Microsoft\Windows\System" valueName="EnableCdp">
+      <parentCategory ref="PolicyPolicies" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />	  
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="EnableLogonOptimization" class="Machine" displayName="$(string.EnableLogonOptimization)" explainText="$(string.EnableLogonOptimization_Help)" presentation="$(presentation.SyncModeThreshold)" key="Software\Policies\Microsoft\Windows\System" valueName="EnableLogonOptimization">
       <parentCategory ref="PolicyPolicies" />
       <supportedOn ref="windows:SUPPORTED_Windows_6_3" />

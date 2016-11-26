@@ -27,6 +27,16 @@
             <decimal value="1" />
           </value>
         </item>
+        <item key="Software\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform" valueName="NoGenTicket">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform" valueName="AllowWindowsEntitlementReactivation">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
         <item key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" valueName="NoOnlinePrintsWizard">
           <value>
             <decimal value="1" />
@@ -100,6 +110,16 @@
           </value>
         </item>
         <item key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" valueName="NoWebServices">
+          <value>
+            <decimal value="0" />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform" valueName="NoGenTicket">
+          <value>
+            <decimal value="0" />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform" valueName="AllowWindowsEntitlementReactivation">
           <value>
             <decimal value="0" />
           </value>
@@ -187,6 +207,16 @@
           </value>
         </item>
         <item key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" valueName="NoWebServices">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform" valueName="NoGenTicket">
+          <value>
+            <decimal value="1" />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform" valueName="AllowWindowsEntitlementReactivation">
           <value>
             <decimal value="1" />
           </value>
@@ -314,6 +344,16 @@
           </value>
         </item>
         <item key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" valueName="NoWebServices">
+          <value>
+            <decimal value="0" />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform" valueName="NoGenTicket">
+          <value>
+            <decimal value="0" />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform" valueName="AllowWindowsEntitlementReactivation">
           <value>
             <decimal value="0" />
           </value>

@@ -72,5 +72,39 @@
         </enum>
       </elements>
     </policy>
+    <policy
+        class="Machine"
+        displayName="$(string.Pol_CipherSuiteOrder_Name)"
+        explainText="$(string.Pol_CipherSuiteOrder_Help)"
+        key="Software\Policies\Microsoft\Windows\LanmanServer"
+        name="Pol_CipherSuiteOrder"
+        presentation="$(presentation.Pol_CipherSuiteOrder)"
+        >
+      <parentCategory ref="Cat_LanmanServer"/>
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <elements>
+        <multiText
+            id="MultiText_CipherSuiteOrder"
+            valueName="CipherSuiteOrder"
+            />
+      </elements>
+    </policy>
+    <policy 
+        class="Machine"
+        displayName="$(string.Pol_HonorCipherSuiteOrder_Name)"
+        explainText="$(string.Pol_HonorCipherSuiteOrder_Help)"
+        key="Software\Policies\Microsoft\Windows\LanmanServer"
+        name="Pol_HonorCipherSuiteOrder"    
+        valueName="HonorCipherSuiteOrder"
+        >
+      <parentCategory ref="Cat_LanmanServer" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>

@@ -30,7 +30,7 @@
     </policy>
     <policy name="LogonType" class="Machine" displayName="$(string.LogonType)" explainText="$(string.LogonType_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\System" valueName="LogonType">
       <parentCategory ref="Logon" />
-      <supportedOn ref="windows:SUPPORTED_WindowsXP" />
+      <supportedOn ref="windows:SUPPORTED_WindowsServer_And_XPproTo7" />
       <enabledValue>
         <decimal value="0" />
       </enabledValue>
@@ -90,7 +90,7 @@
     </policy>
     <policy name="DisableStartupSound" class="Machine" displayName="$(string.DisableStartupSound)" explainText="$(string.DisableStartupSound_Help)" key="Software\Microsoft\Windows\CurrentVersion\Policies\System" valueName="DisableStartupSound">
       <parentCategory ref="Logon" />
-      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVistaTo7" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
@@ -147,6 +147,16 @@
         <disabledValue>
           <decimal value="0" />
         </disabledValue>
+    </policy>
+    <policy name="BlockUserFromShowingAccountDetailsOnSignin" class="Machine" displayName="$(string.BlockUserFromShowingAccountDetailsOnSignin)" explainText="$(string.BlockUserFromShowingAccountDetailsOnSignin_Help)" key="Software\Policies\Microsoft\Windows\System" valueName="BlockUserFromShowingAccountDetailsOnSignin">
+      <parentCategory ref="Logon" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
     </policy>
     <policy name="DisableLockScreenAppNotifications" class="Machine" displayName="$(string.DisableLockScreenAppNotifications)" explainText="$(string.DisableLockScreenAppNotifications_Help)" key="Software\Policies\Microsoft\Windows\System" valueName="DisableLockScreenAppNotifications">
       <parentCategory ref="Logon" />

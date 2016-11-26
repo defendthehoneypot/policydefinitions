@@ -777,6 +777,16 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="AllowInputPersonalization" class="Machine" displayName="$(string.AllowInputPersonalization)" explainText="$(string.AllowInputPersonalization_Help)" key="Software\Policies\Microsoft\InputPersonalization" valueName="AllowInputPersonalization">
+      <parentCategory ref="RegionalOptions" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
     <policy name="Y2K" class="User" displayName="$(string.Y2K)" explainText="$(string.Y2K_Help)" presentation="$(presentation.Y2K)" key="Software\Policies\Microsoft\Control Panel\International\Calendars\TwoDigitYearMax">
       <parentCategory ref="windows:System" />
       <supportedOn ref="windows:SUPPORTED_Win2k" />

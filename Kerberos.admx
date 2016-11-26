@@ -148,5 +148,29 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DevicePKInitEnabled" class="Machine" displayName="$(string.DevicePKInitEnabled)" explainText="$(string.DevicePKInitEnabled_explain)" key="Software\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos\Parameters" presentation="$(presentation.DevicePKInitBehavior)" valueName="DevicePKInitEnabled">
+      <parentCategory ref="kerberos" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+      <elements>
+        <enum id="DevicePKInitBehavior" valueName="DevicePKInitBehavior">
+          <item displayName="$(string.DevicePKInitBehavior_Automatic)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.DevicePKInitBehavior_Force)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
   </policies>
 </policyDefinitions>

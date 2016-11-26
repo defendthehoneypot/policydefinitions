@@ -7,14 +7,16 @@
   </policyNamespaces>
   <resources minRequiredRevision="1.0" />
   <supportedOn>
-    <definitions>
-      <definition name="SUPPORTED_Vista_through_Win7" displayName="$(string.SUPPORTED_Vista_through_Win7)">
-         <or>
-          <range     ref="products:MicrosoftWindowsVista" /> <!-- All of Windows Vista -->
-          <reference ref="products:MicrosoftWindows7"/> <!-- All of Windows 7 -->
-        </or>
-      </definition>
-    </definitions>
+      <definitions>
+          <definition name="SUPPORTED_Vista_through_Win7" displayName="$(string.SUPPORTED_Vista_through_Win7)">
+              <or>
+                  <range     ref="products:MicrosoftWindowsVista" />
+                  <!-- All of Windows Vista -->
+                  <reference ref="products:MicrosoftWindows7"/>
+                  <!-- All of Windows 7 -->
+              </or>
+          </definition>
+      </definitions>
   </supportedOn>
   <categories>
     <category name="PreviousVersions" displayName="$(string.PreviousVersions)">

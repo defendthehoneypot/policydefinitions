@@ -336,7 +336,7 @@
     </policy>
     <policy name="DisableSharedComponent" class="Machine" displayName="$(string.DisableSharedComponent)" explainText="$(string.DisableSharedComponent_Help)" key="Software\Policies\Microsoft\Windows\Installer" valueName="DisableSharedComponent">
       <parentCategory ref="MSI" />
-      <supportedOn ref="windows:SUPPORTED_MSI45" />
+      <supportedOn ref="SUPPORTED_MSI45" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
@@ -346,7 +346,7 @@
     </policy>
     <policy name="MsiDisableEmbeddedUI" class="Machine" displayName="$(string.MsiDisableEmbeddedUI)" explainText="$(string.MsiDisableEmbeddedUI_Help)" key="Software\Policies\Microsoft\Windows\Installer" valueName="MsiDisableEmbeddedUI">
       <parentCategory ref="MSI" />
-      <supportedOn ref="windows:SUPPORTED_MSI45" />
+      <supportedOn ref="SUPPORTED_MSI45" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>

@@ -15,14 +15,14 @@
   <policies>
     <policy name="ActivationBoundaryPolicy" class="Machine" displayName="$(string.ActivationBoundary)" explainText="$(string.ActivationBoundaryHelp)" presentation="$(presentation.ActivationBoundaryPolicy)" key="Software\Policies\Microsoft\Windows\Task Scheduler\Maintenance">
       <parentCategory ref="msched:MaintenanceScheduler" />
-      <supportedOn ref="windows:TS_SUPPORTED_Windows7" />
+      <supportedOn ref="windows:SUPPORTED_Windows8" />
       <elements>
         <text id="ActivationBoundary" valueName="Activation Boundary" />
       </elements>
     </policy>
     <policy name="RandomDelayPolicy" class="Machine" displayName="$(string.RandomDelay)" explainText="$(string.RandomDelayHelp)" presentation="$(presentation.RandomDelayPolicy)" key="Software\Policies\Microsoft\Windows\Task Scheduler\Maintenance" valueName="Randomized">
       <parentCategory ref="msched:MaintenanceScheduler" />
-      <supportedOn ref="windows:TS_SUPPORTED_Windows7" />
+      <supportedOn ref="windows:SUPPORTED_Windows8" />
       <enabledValue>
         <decimal value="1" />
       </enabledValue>
@@ -35,7 +35,7 @@
     </policy>
     <policy name="WakeUpPolicy" class="Machine" displayName="$(string.WakeUp)" explainText="$(string.WakeUpHelp)" key="Software\Policies\Microsoft\Windows\Task Scheduler\Maintenance" valueName="WakeUp">
       <parentCategory ref="msched:MaintenanceScheduler" />
-      <supportedOn ref="windows:TS_SUPPORTED_Windows7" />
+      <supportedOn ref="windows:SUPPORTED_Windows8" />
       <enabledValue>
           <decimal value="1" />
       </enabledValue>
