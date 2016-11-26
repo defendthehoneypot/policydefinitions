@@ -10,6 +10,9 @@
     <category name="BiometricsConfiguration" displayName="$(string.BiometricsConfiguration)">
         <parentCategory ref="windows:WindowsComponents" />
     </category>
+    <category name="FaceConfiguration" displayName="$(string.FaceConfiguration)">
+      <parentCategory ref="BiometricsConfiguration" />
+    </category>
   </categories>
   <policies>
     <policy name="Biometrics_EnableBio" class="Machine" displayName="$(string.Biometrics_EnableBio)" explainText="$(string.Biometrics_EnableBio_Help)" key="SOFTWARE\Policies\Microsoft\Biometrics" valueName="Enabled">
@@ -48,6 +51,16 @@
       <elements>
           <decimal id="Pol_Biometrics_FUSTimeout" valueName="SwitchTimeoutInSeconds" minValue="5" maxValue="60" />
       </elements>
+    </policy>
+    <policy name="Face_EnhancedAntiSpoofing" class="Machine" displayName="$(string.Face_EnhancedAntiSpoofing)" explainText="$(string.Face_EnhancedAntiSpoofing_Help)" key="SOFTWARE\Policies\Microsoft\Biometrics\FacialFeatures" valueName="EnhancedAntiSpoofing">
+      <parentCategory ref="FaceConfiguration" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOARM" />
+      <enabledValue>
+          <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+          <decimal value="0" />
+      </disabledValue>
     </policy>
   </policies>
 </policyDefinitions>

@@ -32,7 +32,7 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
-    <policy name="AppxRuntimeMicrosoftAccountsOptional" class="Both" displayName="$(string.AppxRuntimeMicrosoftAccountsOptional)" explainText="$(string.AppxRuntimeMicrosoftAccountsOptionalExplanation)" key="Software\Microsoft\Windows\CurrentVersion\Policies\System" valueName="MSAOptional">
+    <policy name="AppxRuntimeMicrosoftAccountsOptional" class="Machine" displayName="$(string.AppxRuntimeMicrosoftAccountsOptional)" explainText="$(string.AppxRuntimeMicrosoftAccountsOptionalExplanation)" key="Software\Microsoft\Windows\CurrentVersion\Policies\System" valueName="MSAOptional">
       <parentCategory ref="AppXRuntime" />
       <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
       <enabledValue>
@@ -54,6 +54,16 @@
       <elements>
          <list id="ListBox_ContentUriRules" key="Software\Microsoft\Windows\CurrentVersion\Policies\Packages\Applications\ContentUriRules" valuePrefix=""/>
        </elements>
+    </policy>
+    <policy name="AppxRuntimeBlockHostedAppAccessWinRT" class="Machine" displayName="$(string.AppxRuntimeBlockHostedAppAccessWinRT)" explainText="$(string.AppxRuntimeBlockHostedAppAccessWinRTExplanation)" key="Software\Microsoft\Windows\CurrentVersion\Policies\System" valueName="BlockHostedAppAccessWinRT">
+      <parentCategory ref="AppXRuntime" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
     </policy>
   </policies>
 </policyDefinitions>

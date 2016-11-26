@@ -225,7 +225,7 @@
             presentation="$(presentation.PersonalColors)" 
             key="Software\Policies\Microsoft\Windows\Personalization">
       <parentCategory ref="Personalization" />
-      <supportedOn ref="windows:SUPPORTED_Windows_6_3" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3only" />
       <elements>
         <text id="PersonalColors_Background" valueName="PersonalColors_Background" required="true" />
         <text id="PersonalColors_Accent" valueName="PersonalColors_Accent" required="true" />
@@ -259,6 +259,7 @@
       <supportedOn ref="windows:SUPPORTED_Windows8" />
       <elements>
         <text id="LockScreenImage" valueName="LockScreenImage" required="true" />
+        <boolean id="LockScreenOverlaysDisabled" valueName="LockScreenOverlaysDisabled" />
       </elements>
     </policy>
   </policies>

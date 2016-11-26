@@ -41,6 +41,13 @@
         <text id="Channel_Log_FileLogAccess" valueName="ChannelAccess" />
       </elements>
     </policy>
+    <policy name="Channel_Log_FileLogAccess_5" class="Machine" displayName="$(string.Channel_Log_FileLogAccess_Legacy)" explainText="$(string.Channel_Log_FileLogAccessApplication_Help_Legacy)" presentation="$(presentation.Channel_Log_FileLogAccess_5)" key="System\CurrentControlSet\Services\EventLog\Application">
+      <parentCategory ref="EventLog_Application" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="Channel_Log_FileLogAccess" valueName="CustomSD" />
+      </elements>
+    </policy>
     <policy name="Channel_Log_Retention_1" class="Machine" displayName="$(string.Channel_Log_Retention)" explainText="$(string.Channel_Log_Retention_Help)" key="Software\Policies\Microsoft\Windows\EventLog\Application" valueName="Retention">
       <parentCategory ref="EventLog_Application" />
       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
@@ -82,6 +89,13 @@
         <text id="Channel_Log_FileLogAccess" valueName="ChannelAccess" />
       </elements>
     </policy>
+    <policy name="Channel_Log_FileLogAccess_6" class="Machine" displayName="$(string.Channel_Log_FileLogAccess_Legacy)" explainText="$(string.Channel_Log_FileLogAccessSecurity_Help_Legacy)" presentation="$(presentation.Channel_Log_FileLogAccess_6)" key="System\CurrentControlSet\Services\EventLog\Security">
+      <parentCategory ref="EventLog_Security" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="Channel_Log_FileLogAccess" valueName="CustomSD" />
+      </elements>
+    </policy>
     <policy name="Channel_Log_Retention_2" class="Machine" displayName="$(string.Channel_Log_Retention)" explainText="$(string.Channel_Log_Retention_Help)" key="Software\Policies\Microsoft\Windows\EventLog\Security" valueName="Retention">
       <parentCategory ref="EventLog_Security" />
       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
@@ -121,6 +135,13 @@
       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
       <elements>
         <text id="Channel_Log_FileLogAccess" valueName="ChannelAccess" />
+      </elements>
+    </policy>
+    <policy name="Channel_Log_FileLogAccess_7" class="Machine" displayName="$(string.Channel_Log_FileLogAccess_Legacy)" explainText="$(string.Channel_Log_FileLogAccessApplication_Help_Legacy)" presentation="$(presentation.Channel_Log_FileLogAccess_7)" key="System\CurrentControlSet\Services\EventLog\Setup">
+      <parentCategory ref="EventLog_Setup" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="Channel_Log_FileLogAccess" valueName="CustomSD" />
       </elements>
     </policy>
     <policy name="Channel_Log_Retention_3" class="Machine" displayName="$(string.Channel_Log_Retention)" explainText="$(string.Channel_Log_Retention_Help)" key="Software\Policies\Microsoft\Windows\EventLog\Setup" valueName="Retention">
@@ -172,6 +193,13 @@
       <supportedOn ref="windows:SUPPORTED_WindowsVista" />
       <elements>
         <text id="Channel_Log_FileLogAccess" valueName="ChannelAccess" />
+      </elements>
+    </policy>
+    <policy name="Channel_Log_FileLogAccess_8" class="Machine" displayName="$(string.Channel_Log_FileLogAccess_Legacy)" explainText="$(string.Channel_Log_FileLogAccessSystem_Help_Legacy)" presentation="$(presentation.Channel_Log_FileLogAccess_8)" key="System\CurrentControlSet\Services\EventLog\System">
+      <parentCategory ref="EventLog_System" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="Channel_Log_FileLogAccess" valueName="CustomSD" />
       </elements>
     </policy>
     <policy name="Channel_Log_Retention_4" class="Machine" displayName="$(string.Channel_Log_Retention)" explainText="$(string.Channel_Log_Retention_Help)" key="Software\Policies\Microsoft\Windows\EventLog\System" valueName="Retention">

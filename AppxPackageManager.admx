@@ -42,5 +42,35 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
+    <policy name="DisableDeploymentToNonSystemVolumes" class="Machine" displayName="$(string.DisableDeploymentToNonSystemVolumes)" explainText="$(string.DisableDeploymentToNonSystemVolumesExplanation)" key="Software\Policies\Microsoft\Windows\Appx" valueName="RestrictAppToSystemVolume">
+      <parentCategory ref="AppxDeployment" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3_Update2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="RestrictAppDataToSystemVolume" class="Machine" displayName="$(string.RestrictAppDataToSystemVolume)" explainText="$(string.RestrictAppDataToSystemVolumeExplanation)" key="Software\Policies\Microsoft\Windows\Appx" valueName="RestrictAppDataToSystemVolume">
+      <parentCategory ref="AppxDeployment" />
+      <supportedOn ref="windows:SUPPORTED_Windows_6_3_Update2" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+    <policy name="AllowSharedLocalAppData" class="Machine" displayName="$(string.AllowSharedLocalAppData)" explainText="$(string.AllowSharedLocalAppDataExplanation)" key="Software\Policies\Microsoft\Windows\CurrentVersion\AppModel\StateManager" valueName="AllowSharedLocalAppData">
+      <parentCategory ref="AppxDeployment" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
   </policies>
 </policyDefinitions>
