@@ -148,7 +148,7 @@ If this policy setting is disabled or not configured, then the consent level def
       <string id="WerDisable">Disable Windows Error Reporting</string>
       <string id="WerDisabledExp">This policy setting turns off Windows Error Reporting, so that reports are not collected or sent to either Microsoft or internal servers within your organization when software unexpectedly stops working or fails.
 
-If you enable this policy setting, Windows Error Reporting does not send any problem information to Microsoft. Additionally, solution information is not available in the Action Center in Control Panel.
+If you enable this policy setting, Windows Error Reporting does not send any problem information to Microsoft. Additionally, solution information is not available in Security and Maintenance in Control Panel.
 
 If you disable or do not configure this policy setting, the Turn off Windows Error Reporting policy setting in Computer Configuration/Administrative Templates/System/Internet Communication Management/Internet Communication settings takes precedence. If Turn off Windows Error Reporting is also either disabled or not configured, user settings in Control Panel for Windows Error Reporting are applied.</string>
       <string id="WerDoNotShowUI">Prevent display of the user interface for critical errors</string>
@@ -256,6 +256,7 @@ If you disable this policy setting, then all memory dumps are uploaded according
           <label>Corporate server name:</label>
         </textBox>
         <checkBox refId="WerCERUseSSL">Connect using SSL</checkBox>
+        <checkBox refId="WerCerUploadOnFreeNetworksOnly">Only upload on free networks</checkBox>
         <decimalTextBox refId="WerCERCorporatePortNumber" defaultValue="1273" spin="false">Server port:</decimalTextBox>
       </presentation>
       <presentation id="WerConsentCustomize_1">

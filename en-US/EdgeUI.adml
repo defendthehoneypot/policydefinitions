@@ -44,6 +44,11 @@ By default, Windows will show the user help tips until the user has successfully
 
 If this setting is enabled, Windows will not show any help tips to the user.
       </string>
+      <string id="AllowEdgeSwipe">Allow edge swipe</string>
+      <string id="AllowEdgeSwipe_Help">If you disable this policy setting, users will not be able to invoke any system UI by swiping in from any screen edge.
+
+If you enable or do not configure this policy setting, users will be able to invoke system UI by swiping in from the screen edges.
+      </string>
     </stringTable>
   </resources>
 </policyDefinitionResources>

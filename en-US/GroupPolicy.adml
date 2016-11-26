@@ -5,6 +5,39 @@
   <description>enter description here</description>
   <resources>
     <stringTable>
+      <string id="MitigationOptions">Mitigation Options</string>
+      <string id="Font_List">Untrusted Font Blocking</string>
+      <string id="Font_List_Help">This security feature provides a global setting to prevent programs from loading untrusted fonts. Untrusted fonts are any font installed outside of the %windir%\Fonts directory. This feature can be configured to be in 3 modes: On, Off, and Audit. By default, it is Off and no fonts are blocked. If you aren't quite ready to deploy this feature into your organization, you can run it in Audit mode to see if blocking untrusted fonts causes any usability or compatibility issues.</string>
+      <string id="FontMitigation_On">Block untrusted fonts and log events</string>
+      <string id="FontMitigation_Off">Do not block untrusted fonts</string>
+      <string id="FontMitigation_Audit">Log events without blocking untrusted fonts</string>
+	  
+	  <string id="ProcessMitigationOptions_List">Process Mitigation Options</string>
+      <string id="ProcessMitigationOptions_List_Help">
+        This security feature provides a means to override individual process MitigationOptions settings. This can be used to enforce a number of security policies specific to applications. The application name is specified as the Value name, including extension. The Value is specified as a bit field with a series of flags in particular positions. Bits can be set to either 0 (setting is forced off), 1 (setting is forced on), or ? (setting retains its existing value prior to GPO evaluation). The recognized bit locations are:
+
+        PROCESS_CREATION_MITIGATION_POLICY_DEP_ENABLE (0x00000001)
+        Enables data execution prevention (DEP) for the child process
+
+        PROCESS_CREATION_MITIGATION_POLICY_DEP_ATL_THUNK_ENABLE (0x00000002)
+        Enables DEP-ATL thunk emulation for the child process. DEP-ATL thunk emulation causes the system to intercept NX faults that originate from the Active Template Library (ATL) thunk layer. 
+
+        PROCESS_CREATION_MITIGATION_POLICY_SEHOP_ENABLE (0x00000004)
+        Enables structured exception handler overwrite protection (SEHOP) for the child process. SEHOP blocks exploits that use the structured exception handler (SEH) overwrite technique.
+
+        PROCESS_CREATION_MITIGATION_POLICY_FORCE_RELOCATE_IMAGES_ALWAYS_ON (0x00000100)
+        The force Address Space Layout Randomization (ASLR) policy forcibly rebases images that are not dynamic base compatible by acting as though an image base collision happened at load time. If relocations are required, images that do not have a base relocation section will not be loaded.
+
+        PROCESS_CREATION_MITIGATION_POLICY_BOTTOM_UP_ASLR_ALWAYS_ON (0x00010000)
+        PROCESS_CREATION_MITIGATION_POLICY_BOTTOM_UP_ASLR_ALWAYS_OFF (0x00020000)
+        The bottom-up randomization policy, which includes stack randomization options, causes a random location to be used as the lowest user address.
+
+        For instance, to enable PROCESS_CREATION_MITIGATION_POLICY_DEP_ENABLE and PROCESS_CREATION_MITIGATION_POLICY_FORCE_RELOCATE_IMAGES_ALWAYS_ON, disable PROCESS_CREATION_MITIGATION_POLICY_BOTTOM_UP_ASLR_ALWAYS_OFF, and to leave all other options at their default values, specify a value of:
+        ???????????????0???????1???????1
+
+        Setting flags not specified here to any value other than ? results in undefined behavior.	  
+</string>
+
       <string id="ResetDfsClientInfoDuringRefreshPolicy">Enable AD/DFS domain controller synchronization during policy refresh</string>
       <string id="ResetDfsClientInfoDuringRefreshPolicy_Help">Enabling this setting will cause the Group Policy Client to connect to the same domain controller for DFS shares as is being used for Active Directory.
 
@@ -13,6 +46,27 @@
       <string id="DisableAOACProcessing_Help">This policy setting prevents the Group Policy Client Service from stopping when idle.
 
 </string>
+      <string id="EnableCDP">Continue experiences on this device</string>
+      <string id="EnableCDP_Help">
+This policy setting determines whether the Windows device is allowed to participate in cross-device experiences (continue experiences).
+
+If you enable this policy setting, the Windows device is discoverable by other Windows devices that belong to the same user, and can participate in cross-device experiences.
+
+If you disable this policy setting, the Windows device is not discoverable by other devices, and cannot participate in cross-device experiences.
+
+If you do not configure this policy setting, the default behavior depends on the Windows edition. Changes to this policy take effect on reboot.
+      </string>
+      <string id="Fonts">Fonts</string>
+      <string id="EnableFontProviders">Enable Font Providers</string>
+      <string id="EnableFontProviders_Help">
+        This policy setting determines whether Windows is allowed to download fonts and font catalog data from an online font provider.
+        
+        If you enable this policy setting, Windows periodically queries an online font provider to determine whether a new font catalog is available. Windows may also download font data if needed to format or render text.
+        
+        If you disable this policy setting, Windows does not connect to an online font provider and only enumerates locally-installed fonts.
+      
+        If you do not configure this policy setting, the default behavior depends on the Windows edition. Changes to this policy take effect on reboot.
+      </string>
       <string id="EnableLogonOptimization">Configure Group Policy Caching</string>
       <string id="EnableLogonOptimization_Help">
         This policy setting allows you to configure Group Policy caching behavior.
@@ -466,6 +520,15 @@ If you enable this policy setting, Group Policy uses this administratively confi
 If you disable or do not configure this policy setting, Group Policy will use the default wait time of 60 seconds on computers running Windows operating systems greater than Windows 7 configured for workplace connectivity.</string>
     </stringTable>
     <presentationTable>
+      <presentation id="Font_List">
+        <dropdownList refId="FontMitigation_DL" defaultItem="0" noSort="true">Mitigation Options</dropdownList>
+      </presentation>
+      <presentation id="ProcessMitigationOptions_List">
+        <listBox refId="ProcessMitigationOptionsList">Process Mitigation Options</listBox>
+      </presentation>
+      <presentation id="FontProvidersPolicy">
+        <dropdownList refId="FontProvidersOption" noSort="true" defaultItem="0">The Windows Font Cache Service should be allowed to download fonts and font catalog data from online font providers.</dropdownList>
+      </presentation>
       <presentation id="SyncModeThreshold">
         <decimalTextBox refId="SyncModeSlowLinkThreshold1" defaultValue="500">Slow link value:[number field] milliseconds</decimalTextBox>
         <decimalTextBox refId="SyncModeNoDCThreshold1" defaultValue="5000">Timeout value: [number field] milliseconds</decimalTextBox>

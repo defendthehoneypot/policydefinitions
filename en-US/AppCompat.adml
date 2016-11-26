@@ -14,7 +14,7 @@ If the status is set to Enabled, the MS-DOS subsystem is prevented from running,
 
 If the status is set to Disabled, the MS-DOS subsystem runs for all users on this computer.
 
-If the status is set to Not Configured, the OS falls back on a local policy set by the registry DWORD value HKLM\System\CurrentControlSet\Control\WOW\DisallowedPolicyDefault. If that value is non-0, this prevents all 16-bit applications from running. If that value is 0, 16-bit applications are allowed to run. If that value is also not present, on Windows 8.1 and above the OS will launch the 16-bit application support control panel to allow an elevated administrator to make the decision; on windows 7 and downlevel, the OS will allow 16-bit applications to run.
+If the status is set to Not Configured, the OS falls back on a local policy set by the registry DWORD value HKLM\System\CurrentControlSet\Control\WOW\DisallowedPolicyDefault. If that value is non-0, this prevents all 16-bit applications from running. If that value is 0, 16-bit applications are allowed to run. If that value is also not present, on Windows 10 and above the OS will launch the 16-bit application support control panel to allow an elevated administrator to make the decision; on windows 7 and downlevel, the OS will allow 16-bit applications to run.
 
 Note:  This setting appears in only Computer Configuration.</string>
       <string id="AppCompat_RemoveProgramCompatPropPage_Help">This policy controls the visibility of the Program Compatibility property page shell extension.  This shell extension is visible on the property context-menu of any program shortcut or executable file.

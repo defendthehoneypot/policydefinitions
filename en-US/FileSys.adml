@@ -24,6 +24,8 @@ NOTE: If this policy is Disabled or Not Configured, local administrators may sel
       <string id="DisableEncryptionText">Encryption can add to the processing overhead of filesystem operations.  Enabling this setting will prevent access to and creation of encrypted files</string>
       <string id="EnablePagefileEncryption">Enable NTFS pagefile encryption</string>
       <string id="EnablePagefileEncryptionText">Encrypting the page file prevents malicious users from reading data that has been paged to disk, but also adds processing overhead for filesystem operations.  Enabling this setting will cause the page files to be encrypted.</string>
+      <string id="LongPathsEnabled">Enable Win32 long paths</string>
+      <string id="LongPathsEnabledText">Enabling Win32 long paths will allow manifested win32 applications and Windows Store applications to access paths beyond the normal 260 character limit per node on file systems that support it.  Enabling this setting will cause the long paths to be accessible within the process.</string>
       <string id="ShortNameCreationSettings">Short name creation options</string>
       <string id="ShortNameCreationSettingsText">These settings provide control over whether or not short names are generated during file creation.  Some applications require short names for compatibility, but short names have a negative performance impact on the system.
 
@@ -49,6 +51,7 @@ A value of 1 will disable delete notifications for all volumes.</string>
       </presentation>
       <presentation id="CompressionOptions"/>
       <presentation id="EncryptionOptions"/>
+      <presentation id="LongPathsEnabledOptions"/>
       <presentation id="PagefileEncryptionOptions"/>
       <presentation id="ShortNameCreationSettings">
           <dropdownList refId="ShortNameCreationSetting_Levels" noSort="true" defaultItem="2">Short name creation options</dropdownList>
