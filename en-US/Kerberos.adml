@@ -114,6 +114,22 @@ If you enable this policy setting and the resource domain requests compound auth
 
 If you disable or do not configure this policy setting and the resource domain requests compound authentication, devices will send a non-compounded authentication request first then a compound authentication request when the service requests compound authentication.
 </string>
+      <string id="DevicePKInitEnabled">Support device authentication using certificate</string>
+      <string id="DevicePKInitEnabled_explain">Support for device authentication using certificate will require connectivity to a DC in the device account domain which supports certificate authentication for computer accounts. 
+
+This policy setting allows you to set support for Kerberos to attempt authentication using the certificate for the device to the domain.
+
+If you enable this policy setting, the devices credentials will be selected based on the following options:
+
+Automatic: Device will attempt to authenticate using its certificate. If the DC does not support computer account authentication using certificates then authentication with password will be attempted.
+
+Force: Device will always authenticate using its certificate. If a DC cannot be found which support computer account authentication using certificates then authentication will fail.
+
+If you disable this policy setting, certificates will never be used.
+If you do not configure this policy setting, Automatic will be used.
+</string>
+      <string id="DevicePKInitBehavior_Automatic">Automatic</string>
+      <string id="DevicePKInitBehavior_Force">Force</string>
     </stringTable>
     <presentationTable>
       <presentation id="hosttorealm">
@@ -206,6 +222,9 @@ If you disable or do not configure this policy setting and the resource domain r
         <decimalTextBox refId="MaxTokenSize" defaultValue="48000" spinStep="1000">Maximum size</decimalTextBox>
       </presentation>
       <presentation id="EnableCbacAndArmor">
+      </presentation>
+      <presentation id="DevicePKInitBehavior">
+        <dropdownList refId="DevicePKInitBehavior" noSort="true" defaultItem="0">Device authentication behavior using certificate:</dropdownList>  
       </presentation>
     </presentationTable>
   </resources>

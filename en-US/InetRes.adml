@@ -727,10 +727,10 @@ If you disable this policy setting, browser geolocation support is turned on.
 
 If you do not configure this policy setting, browser geolocation support can be turned on or off in Internet Options on the Privacy tab.</string>
       <string id="IE_ExplainDisableFlashInIE">This policy setting turns off Adobe Flash in Internet Explorer and prevents applications from using Internet Explorer technology to instantiate Flash objects.
- 
-If you enable this policy setting, Flash is turned off for Internet Explorer, and applications cannot use Internet Explorer technology to instantiate Flash objects. In the Manage Add-ons dialog box, the Flash status will be 'Disabled', and users cannot enable Flash. If you enable this policy setting, Internet Explorer will ignore settings made for Adobe Flash through the "Add-on List" and "Deny all add-ons unless specifically allowed in the Add-on List" policy settings.  
- 
-If you disable, or do not configure this policy setting, Flash is turned on for Internet Explorer, and applications can use Internet Explorer technology to instantiate Flash objects. Users can enable or disable Flash in the Manage Add-ons dialog box. 
+
+If you enable this policy setting, Flash is turned off for Internet Explorer, and applications cannot use Internet Explorer technology to instantiate Flash objects. In the Manage Add-ons dialog box, the Flash status will be 'Disabled', and users cannot enable Flash. If you enable this policy setting, Internet Explorer will ignore settings made for Adobe Flash through the "Add-on List" and "Deny all add-ons unless specifically allowed in the Add-on List" policy settings.
+
+If you disable, or do not configure this policy setting, Flash is turned on for Internet Explorer, and applications can use Internet Explorer technology to instantiate Flash objects. Users can enable or disable Flash in the Manage Add-ons dialog box.
 
 Note that Adobe Flash can still be disabled through the "Add-on List" and "Deny all add-ons unless specifically allowed in the Add-on List" policy settings, even if this policy setting is disabled, or not configured. However, if Adobe Flash is disabled through the "Add-on List" and "Deny all add-ons unless specifically allowed in the Add-on List" policy settings and not through this policy setting, all applications that use Internet Explorer technology to instantiate Flash object can still do so. For more information, see "Group Policy Settings in Internet Explorer 10" in the Internet Explorer TechNet library.</string>
       <string id="IE_ExplainFile_NoBrowserClose">Prevents users from closing Microsoft Internet Explorer and File Explorer.
@@ -2031,6 +2031,12 @@ If you do not configure this policy setting, the user can choose whether website
 If you enable this policy setting, the user is prompted before ActiveX controls can run from websites in this zone. The user can choose to allow the control to run from the current site or from all sites.
 
 If you disable this policy setting, the user does not see the per-site ActiveX prompt, and ActiveX controls can run from all sites in this zone.</string>
+<string id="IZ_PolicyAllowTDCControl">Allow only approved domains to use the TDC ActiveX control</string>
+      <string id="IZ_EXPLAIN_PolicyAllowTDCControl">This policy setting controls whether or not the user is allowed to run the TDC ActiveX control on websites.
+
+If you enable this policy setting, the TDC ActiveX control will not run from websites in this zone.
+
+If you disable this policy setting, the TDC Active X control will run from all sites in this zone.</string>
       <string id="IZ_Policy_AllowDynsrcPlayback">Allow video and animation on a webpage that uses an older media player</string>
       <string id="IZ_Policy_AllowDynsrcPlayback_Explain">This policy setting allows the playing of video and animation through older media players in specified zones. Video and animation playback through the object tag may still be allowed, because this involves external controls or media players.
 
@@ -2357,7 +2363,7 @@ If you enable this policy setting, you can control whether or not Internet Explo
 
 If you disable, or do not configure this policy setting, users can choose whether or not to render filters in this zone. Users can change this setting on the Security tab of the Internet Options dialog box. Filters are not rendered by default in this zone.</string>
 
-      <string id="IZ_PolicyRenderLegacyFilters_ExplainDefaultEnable">This policy setting specifies whether Internet Explorer renders legacy visual filters in this zone. 
+      <string id="IZ_PolicyRenderLegacyFilters_ExplainDefaultEnable">This policy setting specifies whether Internet Explorer renders legacy visual filters in this zone.
 
 If you enable this policy setting, you can control whether or not Internet Explorer renders legacy filters by selecting Enable, or Disable, under Options in Group Policy Editor.
 
@@ -2690,14 +2696,14 @@ If you disable this policy setting, script interaction is prevented from occurri
 If you do not configure this policy setting, script interaction can occur automatically without user intervention.</string>
       <string id="IZ_PolicyAntiMalwareCheckingOfActiveXControls">Don't run antimalware programs against ActiveX controls</string>
       <string id="IZ_PolicyAntiMalwareCheckingOfActiveXControls_ExplainDefaultEnable">This policy setting determines whether Internet Explorer runs antimalware programs against ActiveX controls, to check if they're safe to load on pages.
-      
+
 If you enable this policy setting, Internet Explorer won't check with your antimalware program to see if it's safe to create an instance of the ActiveX control.
 
 If you disable this policy setting, Internet Explorer always checks with your antimalware program to see if it's safe to create an instance of the ActiveX control.
 
 If you don't configure this policy setting, Internet Explorer always checks with your antimalware program to see if it's safe to create an instance of the ActiveX control. Users can turn this behavior on or off, using Internet Explorer Security settings.</string>
       <string id="IZ_PolicyAntiMalwareCheckingOfActiveXControls_ExplainDefaultDisable">This policy setting determines whether Internet Explorer runs antimalware programs against ActiveX controls, to check if they're safe to load on pages.
-      
+
 If you enable this policy setting, Internet Explorer won't check with your antimalware program to see if it's safe to create an instance of the ActiveX control.
 
 If you disable this policy setting, Internet Explorer always checks with your antimalware program to see if it's safe to create an instance of the ActiveX control.
@@ -3003,7 +3009,7 @@ If you do not configure this policy setting, the user can turn on or off automat
       <string id="RestrictCalendarContact">Disable changing Calendar and Contact settings</string>
       <string id="RestrictCertificates">Disable changing certificate settings</string>
       <string id="RestrictCheckBrowser">Disable changing default browser check</string>
-      <string id="NotifyNotDefaultBrowser">Notify users if Internet Explorer is not the default web browser</string>  
+      <string id="NotifyNotDefaultBrowser">Notify users if Internet Explorer is not the default web browser</string>
       <string id="RestrictColors">Disable changing color settings</string>
       <string id="RestrictConnectionSettings">Disable changing connection settings</string>
       <string id="RestrictConnectionWizard">Disable Internet Connection wizard</string>
@@ -3116,8 +3122,12 @@ If you do not configure this policy setting, the user can turn smooth scrolling 
       <string id="SUPPORTED_IE8">At least Internet Explorer 8.0</string>
       <string id="SUPPORTED_IE8ONLY">Only Internet Explorer 8.0</string>
       <string id="SUPPORTED_IE9">At least Internet Explorer 9.0</string>
+      <string id="SUPPORTED_IE9_IE11NONWIN10">Only Internet Explorer 9.0 through 11.0. Not supported on Windows 10</string>
       <string id="SUPPORTED_IE10">At least Internet Explorer 10.0</string>
       <string id="SUPPORTED_IE10WIN8">At least Internet Explorer 10.0 on Windows 8</string>
+      <string id="SUPPORTED_IE11WIN8">At least Internet Explorer 11.0 on Windows 8.1</string>
+      <string id="SUPPORTED_IE11WIN8ONLY">Only Internet Explorer 11.0 on Windows 8.1</string>
+      <string id="SUPPORTED_IE11WIN10">At least Internet Explorer 11.0 on Windows 10</string>
       <string id="SUPPORTED_IE11">At least Internet Explorer 11.0</string>
       <string id="SUPPORTED_IE7_NONVISTA">At least Internet Explorer 7.0. Not supported on Windows Vista</string>
       <string id="SUPPORTED_IE7VISTA">At least Internet Explorer 7.0 in Windows Vista</string>
@@ -3320,7 +3330,7 @@ If you do not configure this policy setting, the user can choose whether to dele
 This policy setting prevents users from deleting ActiveX Filtering and Tracking Protection data, which includes the list of websites for which the user has chosen to disable ActiveX Filtering or Tracking Protection. In addition, Tracking Protection data is also collected if users turn on the Personalized Tracking Protection List, which blocks third-party items while the user is browsing.
 
 With at least Internet Explorer 11:
-This policy setting prevents users from deleting ActiveX Filtering data, Tracking Protection data, and Do Not Track exceptions stored for visited websites. 
+This policy setting prevents users from deleting ActiveX Filtering data, Tracking Protection data, and Do Not Track exceptions stored for visited websites.
 
 This feature is available in the Delete Browsing History dialog box.
 
@@ -3399,11 +3409,12 @@ If you disable or do not configure this policy setting, the user can bypass Smar
       <string id="Advanced_DisableEPMCompat">Do not allow ActiveX controls to run in Protected Mode when Enhanced Protected Mode is enabled</string>
       <string id="Advanced_EnableHttp1_1">Use HTTP 1.1</string>
       <string id="Advanced_ProxyHttp1_1">Use HTTP 1.1 through proxy connections</string>
-      <string id="Advanced_EnableSPDY3_0">Allow Internet Explorer to use the SPDY/3 network protocol</string>
       <string id="Advanced_EnableSSL3Fallback">Allow fallback to SSL 3.0 (Internet Explorer)</string>
       <string id="Advanced_FallbackNonProtected">Non-Protected Mode Sites</string>
       <string id="Advanced_FallbackAll">All Sites</string>
       <string id="Advanced_FallbackNone">No Sites</string>
+      <string id="Advanced_EnableSPDY3_0">Allow Internet Explorer to use the SPDY/3 network protocol</string>
+      <string id="Advanced_EnableHTTP2">Allow Internet Explorer to use the HTTP2 network protocol</string>
       <string id="Advanced_SetWinInetProtocols">Turn off encryption support</string>
       <string id="NoPrinting">Turn off Print Menu</string>
       <string id="Advanced_DisableFlipAhead">Turn off the flip ahead with page prediction feature</string>
@@ -3463,6 +3474,13 @@ If you enable this policy setting, Internet Explorer uses the SPDY/3 network pro
 If you disable this policy setting, Internet Explorer won't use the SPDY/3 network protocol.
 
 If you don't configure this policy setting, users can turn this behavior on or off, using Internet Explorer Advanced Internet Options settings.  The default is on.</string>
+      <string id="Advanced_ExplainEnableHTTP2">This policy setting determines whether Internet Explorer uses the HTTP2 network protocol. HTTP2 requests help optimize the latency of network requests through compression, multiplexing, and prioritization.
+
+If you enable this policy setting, Internet Explorer uses the HTTP2 network protocol.
+
+If you disable this policy setting, Internet Explorer won't use the HTTP2 network protocol.
+
+If you don't configure this policy setting, users can turn this behavior on or off, using Internet Explorer Advanced Internet Options settings.  The default is on.</string>
       <string id="Advanced_ExplainEnableSSL3Fallback">This policy setting allows you to block an insecure fallback to SSL 3.0. When this policy is enabled, Internet Explorer will attempt to connect to sites using SSL 3.0 or below when TLS 1.0 or greater fails.
 
 We recommend that you do not allow insecure fallback in order to prevent a man-in-the-middle attack.
@@ -3477,7 +3495,7 @@ If you enable this policy setting, the browser negotiates or does not negotiate 
 
 If you disable or do not configure this policy setting, the user can select which encryption method the browser supports.
 
-Note: SSL 2.0 is off by default. SSL 2.0 is an outdated security protocol, and enabling SSL 2.0 impairs the performance and functionality of TLS 1.0.</string>
+Note: SSL 2.0 is off by default and is no longer supported starting with Windows 10 Version 1607. SSL 2.0 is an outdated security protocol, and enabling SSL 2.0 impairs the performance and functionality of TLS 1.0.</string>
       <string id="IE_ExplainNoPrinting">This policy setting allows you to manage whether users can access the Print menu. Starting with Windows 8, this policy setting also allows you to manage whether users can access the Print flyout for Internet Explorer and any printers under the Devices charm.
 
 If you enable this policy setting, the Print menu in Internet Explorer will not be available. Starting with Windows 8, the Print flyout for Internet Explorer will not be available, and users will not see printers under the Devices charm.
@@ -3510,11 +3528,6 @@ For at least Internet Explorer 11:
 If you disable this policy setting, Internet Explorer only sends the Do Not Track header if inPrivate Browsing mode is used.
 
 If you don't configure the policy setting, users can select the Always send Do Not Track header option, in Internet Explorer settings. By selecting this option, Internet Explorer sends a DNT:1 header with all HTTP and HTTPS requests; unless the user grants a site-specific exception. Internet Explorer sends a DNT:0 header to any sites granted an exception. By default, this option is turned on.</string>
-      <string id="Content_ExplainShowContentAdvisor">This policy setting shows the Content Advisor setting on the Content tab of the Internet Options dialog box.
-
-If you enable this policy setting, Internet Explorer displays the Content Advisor setting on the Content tab of the Internet Options dialog box. Users can change Content Advisor settings.
-
-If you disable or do not configure this policy setting, Internet Explorer does not display the Content Advisor setting on the Content tab of the Internet Options dialog box.</string>
       <string id="Protocols_None">Use no secure protocols</string>
       <string id="Protocols_SSL2">Only use SSL 2.0</string>
       <string id="Protocols_SSL3">Only use SSL 3.0</string>
@@ -3844,6 +3857,20 @@ If you disable or do not configure this policy setting, users can pin sites.</st
 If you turn this setting on, users can see and use the Enterprise Mode option from the Tools menu. If you turn this setting on, but don't specify a report location, Enterprise Mode will still be available to your users, but you won't get any reports.
 
 If you disable or don't configure this policy setting, the menu option won't appear and users won't be able to run websites in Enterprise Mode.</string>
+      <string id="RestrictInternetExplorer">Send all sites not included in the Enterprise Mode Site List to Microsoft Edge.</string>
+      <string id="IE_ExplainRestrictInternetExplorer">This setting lets you decide whether to open all sites not included in the Enterprise Mode Site List in Microsoft Edge. If you use this setting, you must also turn on the Administrative Templates\Windows Components\Internet Explorer\Use the Enterprise Mode IE website list policy setting and you must include at least one site in the Enterprise Mode Site List.
+
+Enabling this setting automatically opens all sites not included in the Enterprise Mode Site List in Microsoft Edge.
+
+Disabling, or not configuring this setting, opens all sites based on the currently active browser.
+
+Note: If you've also enabled the Administrative Templates\Windows Components\Microsoft Edge\Send all intranet sites to Internet Explorer 11 policy setting, then all intranet sites will continue to open in Internet Explorer 11.</string>
+      <string id="ShowMessageWhenOpeningSitesInMicrosoftEdge">Show message when opening sites in Microsoft Edge using Enterprise Mode</string>
+      <string id="IE_ExplainShowMessageWhenOpeningSitesInMicrosoftEdge">This policy setting lets you decide whether employees see an additional page in Internet Explorer 11, stating that a site has been opened using Microsoft Edge with Enterprise Mode.
+
+If you enable this setting, employees see an additional page in Internet Explorer 11, stating that a site has been opened using Microsoft Edge with Enterprise Mode.
+
+If you disable or don't configure this setting, the default app behavior occurs and no additional page appears.</string>
       <string id="VerMgmtDisable">Turn off blocking of outdated ActiveX controls for Internet Explorer</string>
       <string id="IE_ExplainVerMgmtDisable">This policy setting determines whether Internet Explorer blocks specific outdated ActiveX controls. Outdated ActiveX controls are never blocked in the Intranet Zone.
 
@@ -3995,18 +4022,6 @@ If you enable this policy setting, phone number detection is turned off. Users w
 If you disable this policy setting, phone number detection is turned on. Users won't be able to modify this setting.
 
 If you don't configure this policy setting, users can turn this behavior on or off, using Internet Explorer settings. The default is on.</string>
-      <string id="BlockImmersiveBrowser">Turn off the immersive Internet Explorer browser</string>
-      <string id="IE_ExplainBlockImmersiveBrowser">This policy setting lets you decide whether to let Internet Explorer start the immersive Internet Explorer browser.
-
-If you enable this policy setting, Internet Explorer stops the immersive browser from starting, letting only the desktop browser start. Users won't be able to change this setting.
-
-If you disable or don't configure this policy setting, users can use both the immersive and desktop browsers.</string>
-      <string id="ProhibitExtensionDisabling">Prevent users from turning off Internet Explorer extensions using the "-extoff" command-line parameter.</string>
-      <string id="IE_ExplainProhibitExtensionDisabling">This policy setting lets you decide whether to let Internet Explorer extensions be turned off using the "-extoff" command-line parameter.
-
-If you enable this policy setting, Internet Explorer stops users from turning off Internet Explorer extensions using the "-extoff" parameter.
-
-If you disable or don't configure this policy setting, users won't be able to turn off Internet Explorer extensions using the parameter.</string>
       <string id="SiteDiscoveryEnableXML">Turn on Site Discovery XML output</string>
       <string id="SiteDiscoveryEnableWMI">Turn on Site Discovery WMI output</string>
       <string id="SiteDiscoveryDomainAllowList">Limit Site Discovery output by Domain</string>
@@ -4040,13 +4055,21 @@ To configure zone(s) included in site discovery, a binary number is formed based
 	• 1 - Trusted Sites Zone
 	• 1 - Local Intranet Zone
 	• 0 - Local Machine Zone
-• 22 - Trusted, Intranet, and Restricted site zones only 
+• 22 - Trusted, Intranet, and Restricted site zones only
   Binary Representation - 10110
 	• 1 - Restricted Sites Zone
 	• 0 - Internet Zone
 	• 1 - Trusted Sites Zone
 	• 1 - Local Intranet Zone
 	• 0 - Local Machine Zone</string>
+      <string id="VersionListAutomaticDownloadDisable">Turn off automatic download of the ActiveX VersionList</string>
+      <string id="IE_Explain_VersionListAutomaticDownloadDisable">This setting determines whether IE automatically downloads updated versions of Microsoft’s VersionList.XML. IE uses this file to determine whether an ActiveX control should be stopped from loading.
+
+If you enable this setting, IE stops downloading updated versions of VersionList.XML. Turning off this automatic download breaks the out-of-date ActiveX control blocking feature by not letting the version list update with newly outdated controls, potentially compromising the security of your computer.
+
+If you disable or don't configure this setting, IE continues to download updated versions of VersionList.XML.
+
+For more information, see "Out-of-date ActiveX control blocking" in the Internet Explorer TechNet library.</string>
     </stringTable>
     <presentationTable>
       <presentation id="VerMgmtDomainAllowlist_1">
@@ -4146,6 +4169,12 @@ To configure zone(s) included in site discovery, a binary number is formed based
       </presentation>
       <presentation id="IZ_PolicyOnlyAllowApprovedDomainsToUseActiveXWithoutPrompt_DefaultOff">
         <dropdownList refId="IZ_Partname120b" noSort="true" defaultItem="1">Only allow approved domains to use ActiveX controls without prompt</dropdownList>
+      </presentation>
+      <presentation id="IZ_PolicyAllowTDCControl_DefaultOn">
+        <dropdownList refId="IZ_Partname120c" noSort="true" defaultItem="0">Only allow approved domains to use the TDC ActiveX control</dropdownList>
+      </presentation>
+      <presentation id="IZ_PolicyAllowTDCControl_DefaultOff">
+        <dropdownList refId="IZ_Partname120c" noSort="true" defaultItem="1">Only allow approved domains to use the TDC ActiveX control</dropdownList>
       </presentation>
       <presentation id="IZ_Policy_AllowDynsrcPlayback_1">
         <dropdownList refId="IZ_Partname120A" noSort="true" defaultItem="0">Allow video and animation on a Web page that uses a legacy media player</dropdownList>

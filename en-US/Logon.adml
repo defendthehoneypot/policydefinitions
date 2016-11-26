@@ -57,11 +57,7 @@ If you enable this setting, the system does not display a message reminding user
 If you disable or do not configure this policy setting, the system displays the message reminding users to wait while their system starts or shuts down, or while users log on or off.</string>
       <string id="Logon">Logon</string>
       <string id="LogonType">Always use classic logon</string>
-      <string id="LogonType_Help">This policy setting forces the user to log on to the computer using the classic logon screen. By default, a workgroup is set to use the simple logon screen. This setting only works when the computer is not on a domain.
-
-If you enable this policy setting, the classic log on screen is presented to the user at logon, rather than the simple logon screen.
-
-If you disable or do not configure this policy setting, computers in a workgroup will present the simple logon screen to the user at logon.</string>
+      <string id="LogonType_Help">This policy is not available in this version of Windows.</string>
       <string id="NoWelcomeTips">Do not display the Getting Started welcome screen at logon</string>
       <string id="NoWelcomeTips_Help">This policy setting hides the welcome screen that is displayed on Windows 2000 Professional each time the user logs on.
 
@@ -129,19 +125,7 @@ The locations that Switch User interface appear are in the Logon UI, the Start m
 
 If you disable or do not configure this policy setting, the Switch User interface is accessible to the user in the three locations.</string>
       <string id="DisableStartupSound">Turn off Windows Startup sound</string>
-      <string id="DisableStartupSound_Help">This policy setting turns off the Windows Startup sound and prevents its customization in the Sound item of Control Panel.
-
-The Microsoft Windows Startup sound is heard during system startup and cold startup, and can be turned on or off in the Sound item of Control Panel.
-
-Enabling or disabling this setting automatically prevents users from customizing the default behavior of the Windows Startup sound.
-
-If you enable this policy setting, the Windows Startup sound is turned off for all users.
-
-If you disable this policy setting, the Windows Startup sound is turned on for all users.
-
-If you do not configure this policy setting, the Windows Startup sound is turned on for all users by default and is customizable in the Sound item of Control Panel.
-
-This policy setting does not prevent users from setting preferences for other system sounds.</string>
+      <string id="DisableStartupSound_Help">This policy is not available in this version of Windows.</string>
       <string id="EnableFirstLogonAnimation">Show first sign-in animation </string>
       <string id="EnableFirstLogonAnimation_Help">This policy setting allows you to control whether users see the first sign-in animation when signing in to the computer for the first time.  This applies to both the first user of the computer who completes the initial setup and users who are added to the computer later.  It also controls if Microsoft account users will be offered the opt-in prompt for services during their first sign-in.
 
@@ -165,6 +149,12 @@ If you disable or do not configure this policy setting, connected users will be 
 If you enable this policy setting, Logon UI will enumerate all local users on domain-joined computers.
 
 If you disable or do not configure this policy setting, the Logon UI will not enumerate local users on domain-joined computers.</string>
+      <string id="BlockUserFromShowingAccountDetailsOnSignin">Block user from showing account details on sign-in</string>
+      <string id="BlockUserFromShowingAccountDetailsOnSignin_Help">This policy prevents the user from showing account details (email address or user name) on the sign-in screen.
+
+If you enable this policy setting, the user cannot choose to show account details on the sign-in screen.
+
+If you disable or do not configure this policy setting, the user may choose to show account details on the sign-in screen.</string>
       <string id="DisableLockScreenAppNotifications">Turn off app notifications on the lock screen</string>
       <string id="DisableLockScreenAppNotifications_Help">This policy setting allows you to prevent app notifications from appearing on the lock screen.
 
