@@ -13,6 +13,12 @@
     <category name="NetworkCost_Category" displayName="$(string.NetworkCost_Category)">
       <parentCategory ref="WlanSvc_Category" />
     </category>
+    <category name="Wireless_Display_Category" displayName="$(string.Wireless_Display_Category)">
+      <parentCategory ref="windows:Network" />
+    </category>
+    <category name="WlanSettings_Category" displayName="$(string.WlanSettings_Category)">
+      <parentCategory ref="WlanSvc_Category" />
+    </category>
   </categories>
   <policies>
     <policy name="SetCost" class="Machine" displayName="$(string.SetCost)" explainText="$(string.SetCost_Help)" presentation="$(presentation.SetCost_Presentation)" key="Software\Policies\Microsoft\Windows\Wireless\NetCost">
@@ -36,8 +42,38 @@
             </value>
           </item>
         </enum>
-      </elements>      
-    </policy>   
+      </elements>
+    </policy>
+    <policy name="SetPINEnforced" class="Machine" 
+            displayName="$(string.Wireless_Display_PINEnforced)" 
+            explainText="$(string.Wireless_Display_PINEnforced_Help)" 
+            key="SOFTWARE\Policies\Microsoft\WirelessDisplay" 
+            valueName="EnforcePinBasedPairing">
+      <parentCategory ref="Wireless_Display_Category" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <enabledValue> <decimal value="1" /> </enabledValue>
+      <disabledValue> <decimal value="0" /> </disabledValue>
+    </policy>
+    <policy name="SetPINPreferred" class="Machine" 
+            displayName="$(string.Wireless_Display_PINPreferred)" 
+            explainText="$(string.Wireless_Display_PINPreferred_Help)" 
+            key="SOFTWARE\Policies\Microsoft\WirelessDisplay" 
+            valueName="PreferPinBasedPairing">
+      <parentCategory ref="Wireless_Display_Category" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0"/>
+      <enabledValue> <decimal value="1" /> </enabledValue>
+      <disabledValue> <decimal value="0" /> </disabledValue>
+    </policy>
+    <policy name="WiFiSense" class="Machine" displayName="$(string.WiFiSense)" explainText="$(string.WiFiSense_Help)" key="Software\Microsoft\wcmsvc\wifinetworkmanager\config" valueName="AutoConnectAllowedOEM">
+      <parentCategory ref="WlanSettings_Category" />
+      <supportedOn ref="windows:SUPPORTED_Windows_10_0_NOSERVER" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy> 
   </policies>
 </policyDefinitions>
 

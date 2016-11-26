@@ -59,6 +59,15 @@
         <majorVersion name="MicrosoftWindows_6_3_RT" displayName="$(string.MicrosoftWindows_6_3_RT)" versionIndex="12">
             <minorVersion name="MicrosoftWindows_6_3_RT_RTM" displayName="$(string.MicrosoftWindows_6_3_RT_RTM)" versionIndex="0"/>
         </majorVersion>
+        <majorVersion name="MicrosoftWindowsServer_10_0" displayName="$(string.MicrosoftWindowsServer_10_0)" versionIndex="13">
+            <minorVersion name="MicrosoftWindowsServer_10_0_RTM" displayName="$(string.MicrosoftWindowsServer_10_0_RTM)" versionIndex="0"/>
+          </majorVersion>
+        <majorVersion name="MicrosoftWindows_10_0" displayName="$(string.MicrosoftWindows_10_0)" versionIndex="14">
+            <minorVersion name="MicrosoftWindows_10_0_RTM" displayName="$(string.MicrosoftWindows_10_0_RTM)" versionIndex="0"/>
+        </majorVersion>
+        <majorVersion name="MicrosoftWindows_10_0_RT" displayName="$(string.MicrosoftWindows_10_0_RT)" versionIndex="15">
+            <minorVersion name="MicrosoftWindows_10_0_RT_RTM" displayName="$(string.MicrosoftWindows_10_0_RT_RTM)" versionIndex="0"/>
+        </majorVersion>
       </product>
 
       <!-- Internet Explorer -->
